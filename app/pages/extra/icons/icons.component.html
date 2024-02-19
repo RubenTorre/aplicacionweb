@@ -1,0 +1,138 @@
+<mat-card class="cardWithShadow">
+  <mat-card-content>
+    <div class="navbar">
+      <div>
+        <span>Bienvenido</span>
+        <span id="fechaActual" style="margin-left: 10px;">{{ fechaActual }}</span>
+      </div>
+    </div>
+    
+    <br>
+    <header>
+      <h1>Aplicación de captura de fotos</h1>
+    </header>
+    
+    <main>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <form>
+      <div class="form-group">
+        <label for="agente">Selecciona un Agente:</label>
+        <select class="form-control" id="agente" name="agente" [(ngModel)]="selectedAgente">
+          
+          <option *ngFor="let agente of agentesList" [value]="agente.idagente">{{ agente.nombre }} {{ agente.apellido }}</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <form>
+      
+        <div class="form-group">
+          <label for="codigoImagen">Ingresa el Código de la Imagen:</label>
+          <input type="text" class="form-control" id="codigoImagen" name="codigoImagen" [(ngModel)]="codigo">
+
+        </div>
+      </form>
+    </div>
+          </div>
+        
+      
+
+
+        <div class="container">
+        
+            <div class="row justify-content-center mt-3">
+              <div class="col-md-6 text-center">
+              <button class="btn btn-primary" (click)="descargarpdf()">Generar Pdf</button>
+            </div>
+            </div>
+          </div>
+          
+      </div>
+    </main>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+      header {
+        background-color: #00bfff;
+        padding: 10px;
+        text-align: center;
+      }
+
+      h1 {
+        color: white;
+        font-size: 24px;
+      }
+
+      main {
+        margin-top: 20px;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .button {
+        background-color: #00bfff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        
+      }
+
+      .button:hover {
+        background-color: #0099ff;
+      }
+
+      .photos {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 20px;
+      }
+
+      .photo-container {
+        text-align: center;
+      }
+
+      .photo {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        background-color: white;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      
+    </style>
+  </mat-card-content>
+</mat-card>

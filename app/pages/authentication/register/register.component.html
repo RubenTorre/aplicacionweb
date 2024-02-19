@@ -1,0 +1,56 @@
+<div class="blank-layout-container justify-content-center align-items-center bg-light-primary">
+  <div
+    class="position-relative row w-100 h-100 bg-gredient justify-content-center"
+  >
+    <div class="col-lg-4 d-flex align-items-center">
+      <mat-card class="cardWithShadow boxed-auth">
+        <mat-card-content class="p-32">
+          <div class="text-center">
+            <a [routerLink]="['/dashboard']">
+              <img
+                src="assets/images/logos/logo2023.png"
+                class="align-middle m-2"
+                alt="logo"
+                style="width: 300px; height: 50px;"
+              />
+            </a>
+          </div>
+
+          <div class="or-border m-t-30">REGISTRATE</div>
+
+          <form class="m-t-30">
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Nombre</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input matInput [(ngModel)]="nombre" name="nombre" required>
+            </mat-form-field>
+          
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Nombre Usuario</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input matInput [(ngModel)]="nombreUsuario" name="nombreUsuario" required>
+            </mat-form-field>
+          
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Contraseña</mat-label>
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input matInput type="password" [(ngModel)]="contrasena" name="contrasena" required>
+            </mat-form-field>
+          
+            <button type="button" (click)="registrarUsuario()" mat-flat-button color="primary" class="w-100">Registrar</button>
+          
+          
+            <!-- input -->
+          </form>
+          <span class="d-block f-w-500 text-center m-t-24"
+            >Ya tienes una cuenta?
+
+            <a
+              [routerLink]="['/authentication/login']"
+              class="text-decoration-none text-primary f-w-500 f-s-14"
+            >
+            Inicia sesión</a
+            >
+          </span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

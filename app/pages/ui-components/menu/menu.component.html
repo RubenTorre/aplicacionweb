@@ -1,0 +1,45 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Asignación de Libretines</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <form>
+                <div class="form-group">
+                  <label for="agente">Selecciona un Agente:</label>
+                  <select class="form-control" id="agente" name="agente" [(ngModel)]="selectedAgente">
+                    <option *ngFor="let agente of agentesList" [value]="agente.idagente">{{ agente.nombre }} {{ agente.apellido }}</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-6">
+              <form>
+                <div class="form-group">
+                  <label for="codigo_inicio">Código de Inicio:</label>
+                  <input type="text" class="form-control" id="codigo_inicio" name="codigo_inicio" [(ngModel)]="codigoInicio" required>
+                </div>
+                <div class="form-group">
+                  <label for="codigo_fin">Código de Fin:</label>
+                  <input type="text" class="form-control" id="codigo_fin" name="codigo_fin" [(ngModel)]="codigoFin" required>
+                </div>
+              </form>
+            </div>
+          </div>
+          <hr />
+          <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+              <button type="button" class="btn btn-danger mx-2" (click)="cancelar()">Cancelar</button>
+              <button type="button" class="btn btn-danger mx-2" (click)="asignarLibretin(selectedAgente, codigoInicio, codigoFin)">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
